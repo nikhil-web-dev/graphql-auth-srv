@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const session = require("express-session");
 const passport = require("passport");
 const passportConfig = require("./services/auth");
-const MongoStore = require("connect-mongo")(session);
+//const MongoStore = require("connect-mongo")(session);
 const schema = require("./schema/schema");
 
 // Create a new Express application
@@ -24,8 +24,6 @@ try {
   const db = mongoose.connect(MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify: false,
   });
 
   console.log("Mongodb connection established");
