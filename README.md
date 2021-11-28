@@ -1,1 +1,1 @@
-# auth-graphql-starter
+# auth-graphql
