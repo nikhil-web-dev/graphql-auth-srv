@@ -1,10 +1,9 @@
-import React from "react";
+import React, { Component } from "react";
 import AuthForm from "./AuthForm";
-import mutation from "../mutations/Login";
+import mutation from "../mutations/SignUp";
 import { graphql } from "react-apollo";
-import query from "../queries/currentUser";
 
-class LoginForm extends React.Component {
+class SignUpForm extends Component {
   constructor(props) {
     super(props);
 
@@ -15,7 +14,6 @@ class LoginForm extends React.Component {
     this.props
       .mutate({
         variables: { email, password },
-        refetchQueries: [{ query }],
       })
       .catch((res) => {
         const errors = res.graphQLErrors.map((error) => error.message);
@@ -26,7 +24,7 @@ class LoginForm extends React.Component {
   render() {
     return (
       <div>
-        Login:
+        <h3>Sign Up Form</h3>
         <AuthForm
           errors={this.state.errors}
           onSubmit={this.onSubmit.bind(this)}
@@ -35,4 +33,5 @@ class LoginForm extends React.Component {
     );
   }
 }
-export default graphql(mutation)(LoginForm);
+
+export default graphql(mutation)(SignUpForm);
