@@ -6,7 +6,7 @@ import { Router, hashHistory, Route } from "react-router";
 import App from "./components/App";
 import LoginForm from "./components/LoginForm";
 import SignUpForm from "./components/SignUpForm";
-
+import Dashboard from "./components/Dashboard";
 //ApolloClient interacts with out backend.
 //ApolloProvider provides glue layer between ApolloClient and react app.
 //NetworkInterface is an incharge of making actual network requests to our backend server
@@ -30,6 +30,7 @@ const Root = () => {
         <Route path="/" component={App}>
           <Route path="/login" component={LoginForm} />
           <Route path="/signup" component={SignUpForm} />
+          <Route path="/dashboard" component={Dashboard} />
         </Route>
       </Router>
     </ApolloProvider>
